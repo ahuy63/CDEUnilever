@@ -1,0 +1,77 @@
+﻿@model CDEUnilever_WebApp.Models.User;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+
+        <div class="col-xl-12 col-lg-12 col-md-9">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <div class="p-5">
+                            Avatar
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="p-5">
+                            <div class="text-left">
+                                <h5 class="h5 text-gray-900 mb-1">Nhan vien:</h5>   
+                            </div>
+                            <div class="text-left">
+                                <h3 style="color: blue; font-weight: bold">@Model.FullName </h3>
+                                <h1>**** </h1>
+                                <h5>Ngay gia nhap: @Model.DateCreated</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="p-5">
+                            <a asp-controller="User" asp-action="EditUserInfo" asp-route-id="@Model.Id">Chinh sua thong tin</a><hr />
+                            <a asp-controller="User" asp-action="EditUserPassword" asp-route-id="@Model.Id">Doi Password</a> <hr />
+                            <a href="#">Khoa hoc</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <form class="user" asp-controller="User" asp-action="ChangeUserInfo" method="post">
+                                <div class="col-lg-8">
+                                <div class="form-group">
+                                    <input asp-for="Id" type="hidden" />
+                                    <label>Ho ten</label>
+                                    <input asp-for="FullName" class="form-control form-control-user">
+                                </div>
+                                <div class="form-group">
+                                    <label>So dien thoai</label>
+                                    <input asp-for="Phone" class="form-control form-control-user">
+                                </div>
+                                <div class="form-group">
+                                    <label>Dia chi</label>
+                                    <input asp-for="Address" class="form-control form-control-user">
+                                </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        Chap nhan
+                                    </button>
+                                    <a href="#" class="btn btn-primary btn-user btn-block">
+                                        Huy
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

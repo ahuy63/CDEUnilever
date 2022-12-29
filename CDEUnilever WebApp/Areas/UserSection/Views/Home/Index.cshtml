@@ -1,0 +1,57 @@
+﻿@model CDEUnilever_WebApp.Models.User;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">CDExcellent</h1>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        Nhan vien: <br>
+        @Model.FullName <br>
+        Rating: <br>
+        **** <br>
+        Ngay gia nhap: @Model.DateCreated<br>
+    </div>
+    <hr>
+    <div class="row">
+
+        <a href="#" class="btn btn-primary btn-icon-split m-3">
+            <span class="icon text-white-50">
+                <i class="fas fa-flag"></i>
+            </span>
+            <span class="text">Đặt lịch</span>
+        </a>
+        <a href="#" class="btn btn-primary btn-icon-split m-3">
+            <span class="icon text-white-50">
+                <i class="fas fa-flag"></i>
+            </span>
+            <span class="text">Tạo task</span>
+        </a>
+        <a href="#" class="btn btn-primary btn-icon-split m-3">
+            <span class="icon text-white-50">
+                <i class="fas fa-flag"></i>
+            </span>
+            <span class="text">Lịch sử</span>
+        </a>
+        <a href="#" class="btn btn-primary btn-icon-split m-3">
+            <span class="icon text-white-50">
+                <i class="fas fa-flag"></i>
+            </span>
+            <span class="text">Thông báo</span>
+        </a>
+        @{
+            if (@Model.RoleId == 1 || @Model.RoleId == 2)
+            {
+                <a href="#" class="btn btn-primary btn-icon-split m-3">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-flag"></i>
+                    </span>
+                    <span class="text">Quản lý</span>
+                </a>
+            }
+        }
+    </div>
+</div>
